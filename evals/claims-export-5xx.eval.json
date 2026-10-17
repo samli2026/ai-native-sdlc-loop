@@ -1,0 +1,11 @@
+{
+  "name": "claims-export-handles-core-timeout",
+  "source": "Incident: 5xx breach on claims export",
+  "from": "HEAD",
+  "prompt": "导出大范围理赔数据时客户看到 500。让它稳定，跑测试。",
+  "may_change": ["src", "tests"],
+  "checks": [
+    { "name": "tests pass", "run": "make test" },
+    { "name": "no blanket exception swallow", "run": "! grep -qE 'except Exception:\\s*pass' src/claims_export.py" }
+  ]
+}
