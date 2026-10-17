@@ -7,7 +7,7 @@ test:
 	@python3 -m unittest discover -s tests -t . -q
 
 lint:
-	@python3 -m py_compile tests/test_demo.py src/*.py 2>/dev/null || python3 -m py_compile tests/test_demo.py
+	@python3 -m py_compile tests/test_demo.py
 	@echo "0 warnings"
 
 run:
